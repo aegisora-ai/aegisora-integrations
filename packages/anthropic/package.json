@@ -1,0 +1,32 @@
+{
+  "name": "@aegisora/integration-anthropic",
+  "version": "0.1.2",
+  "private": true,
+  "description": "Aegisora integration adapter for the Anthropic Messages API.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx tests/anthropic.test.ts",
+    "verify": "pnpm typecheck && pnpm build && pnpm test"
+  },
+  "dependencies": {
+    "@aegisora/integrations-core": "workspace:*",
+    "@aegisora/sdk": "^0.1.2",
+    "@anthropic-ai/sdk": "^0.60.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}

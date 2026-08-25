@@ -1,0 +1,30 @@
+{
+  "name": "@aegisora/integrations-core",
+  "version": "0.1.2",
+  "private": true,
+  "description": "Core contracts and adapter infrastructure for Aegisora integrations.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx tests/core.test.ts",
+    "verify": "pnpm typecheck && pnpm build && pnpm test"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}
